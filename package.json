@@ -1,0 +1,30 @@
+{
+  "name": "tsmproducer",
+  "version": "1.0.0",
+  "description": "Example typescript npm project supporting es6 modules via the module package.json attribute as well as commonjs",
+  "main": "target/main/cjs/index.js",
+  "types": "target/main/esm/index.d.ts",
+  "module": "target/main/esm/fesm.js",
+  "scripts": {
+    "build-cjs": "rm -rf target/main/cjs && tsc -p tsconfig-cjs.json",
+    "build-esm": "rm -rf target/main/esm && tsc -p tsconfig-esm.json && rollup target/main/esm/index.js -o target/main/esm/fesm.js",
+    "build-all": "npm run build-cjs && npm run build-esm"
+  },
+  "keywords": [
+    "typescript",
+    "commonjs",
+    "npm",
+    "modules",
+    "es6",
+    "es2015",
+    "publishing",
+    "rollup",
+    "treeshaking"
+  ],
+  "author": "Ole Ersoy",
+  "license": "MIT",
+  "devDependencies": {
+    "rollup": "^0.41.6",
+    "typescript": "^2.3.4"
+  }
+}
